@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para ti Lulo👻</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body{
+      overflow:hidden;
+      height:100vh;
+      background: linear-gradient(180deg,#1a1a2e,#22223b,#2b2d42);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:white;
+    }
+
+    .container{
+      text-align:center;
+      z-index:2;
+      padding:30px;
+      background: rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border-radius:25px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+      animation: aparecer 2s ease;
+    }
+
+    h1{
+      font-size:3rem;
+      color:#e0d4ff;
+      margin-bottom:15px;
+      animation: pulse 3s infinite;
+    }
+
+    p{
+      color:#cfcfe7;
+      font-size:1.2rem;
+      margin:10px 0;
+    }
+
+    .moco{
+      font-size:4rem;
+      cursor:pointer;
+      margin-top:20px;
+      transition: transform .2s;
+      user-select:none;
+    }
+
+    .moco:hover{
+      transform: scale(1.2);
+    }
+
+    .contador{
+      margin-top:10px;
+      color:#9effb0;
+      font-size:1.1rem;
+    }
+
+    .ghost{
+      position:absolute;
+      font-size:45px;
+      opacity:0.8;
+      animation: flotar linear infinite;
+      user-select:none;
+    }
+
+    @keyframes flotar{
+      from{
+        transform: translateY(110vh) translateX(0px);
+      }
+      to{
+        transform: translateY(-120vh) translateX(80px);
+      }
+    }
+
+    @keyframes pulse{
+      0%{transform:scale(1);}
+      50%{transform:scale(1.03);}
+      100%{transform:scale(1);}
+    }
+
+    @keyframes aparecer{
+      from{
+        opacity:0;
+        transform: translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform: translateY(0);
+      }
+    }
+
+    .mensaje{
+      margin-top:15px;
+      color:#b8ffcb;
+      opacity:0;
+      transition:0.4s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Fantasmas -->
+  <div class="ghost" style="left:10%; animation-duration:14s;">👻</div>
+  <div class="ghost" style="left:25%; animation-duration:18s;">👻</div>
+  <div class="ghost" style="left:40%; animation-duration:16s;">👻</div>
+  <div class="ghost" style="left:60%; animation-duration:20s;">👻</div>
+  <div class="ghost" style="left:80%; animation-duration:15s;">👻</div>
+
+  <div class="container">
+    <h1>Espero que te mejores </h1>
+
+    <p>Tómate un naproxeno Lulo 😠</p>
+    <p>y dale de comer al fantasma moco verde</p>
+
+    <div class="moco" onclick="alimentar()">🟢</div>
+
+    <div class="contador">
+      Fantasma alimentado: <span id="count">0</span> veces
+    </div>
+
+    <div class="mensaje" id="mensaje">
+      El fantasma está feliz 👻💚
+    </div>
+  </div>
+
+  <script>
+    let contador = 0;
+
+    function alimentar(){
+      contador++;
+      document.getElementById("count").innerText = contador;
+
+      const mensaje = document.getElementById("mensaje");
+      mensaje.style.opacity = "1";
+
+      setTimeout(() => {
+        mensaje.style.opacity = "0";
+      }, 1500);
+    }
+  </script>
+
+</body>
+</html>
