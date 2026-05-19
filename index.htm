@@ -3,152 +3,170 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Para ti Lulo👻</title>
+  <title>YO NO FUI VENUUU</title>
 
   <style>
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     body{
-      overflow:hidden;
-      height:100vh;
-      background: linear-gradient(180deg,#1a1a2e,#22223b,#2b2d42);
+      background: linear-gradient(135deg, #4facfe, #001f4d, #6ec6ff);
+      min-height:100vh;
       display:flex;
       justify-content:center;
       align-items:center;
-      color:white;
+      overflow:hidden;
+      position:relative;
     }
 
-    .container{
-      text-align:center;
-      z-index:2;
+    /* Gatitos volando */
+    .gato{
+      position:absolute;
+      width:120px;
+      animation: volar linear infinite;
+      opacity:0.9;
+      filter: drop-shadow(0 0 10px #00cfff);
+    }
+
+    .g1{ top:10%; left:-150px; animation-duration:14s; }
+    .g2{ top:40%; left:-200px; animation-duration:18s; }
+    .g3{ top:70%; left:-170px; animation-duration:12s; }
+
+    @keyframes volar{
+      from{
+        transform:translateX(0) rotate(0deg);
+      }
+      to{
+        transform:translateX(130vw) rotate(360deg);
+      }
+    }
+
+    /* Caja principal */
+    .card{
+      background: rgba(0, 40, 90, 0.45);
+      backdrop-filter: blur(12px);
+      border:2px solid rgba(255,255,255,0.4);
       padding:30px;
-      background: rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(10px);
       border-radius:25px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.3);
-      animation: aparecer 2s ease;
+      text-align:center;
+      width:90%;
+      max-width:700px;
+      box-shadow:0 0 30px rgba(0,191,255,0.6);
+      z-index:2;
     }
 
     h1{
+      color:#b7ecff;
       font-size:3rem;
-      color:#e0d4ff;
-      margin-bottom:15px;
-      animation: pulse 3s infinite;
+      text-shadow:0 0 15px #00bfff;
+      margin-bottom:10px;
     }
 
-    p{
-      color:#cfcfe7;
-      font-size:1.2rem;
-      margin:10px 0;
-    }
-
-    .moco{
-      font-size:4rem;
-      cursor:pointer;
-      margin-top:20px;
-      transition: transform .2s;
-      user-select:none;
-    }
-
-    .moco:hover{
-      transform: scale(1.2);
-    }
-
-    .contador{
-      margin-top:10px;
-      color:#9effb0;
-      font-size:1.1rem;
-    }
-
-    .ghost{
-      position:absolute;
-      font-size:45px;
-      opacity:0.8;
-      animation: flotar linear infinite;
-      user-select:none;
-    }
-
-    @keyframes flotar{
-      from{
-        transform: translateY(110vh) translateX(0px);
-      }
-      to{
-        transform: translateY(-120vh) translateX(80px);
-      }
-    }
-
-    @keyframes pulse{
-      0%{transform:scale(1);}
-      50%{transform:scale(1.03);}
-      100%{transform:scale(1);}
-    }
-
-    @keyframes aparecer{
-      from{
-        opacity:0;
-        transform: translateY(20px);
-      }
-      to{
-        opacity:1;
-        transform: translateY(0);
-      }
+    h2{
+      color:white;
+      font-size:1.7rem;
+      margin-bottom:20px;
+      text-shadow:0 0 10px #00bfff;
     }
 
     .mensaje{
-      margin-top:15px;
-      color:#b8ffcb;
-      opacity:0;
-      transition:0.4s;
+      color:#dff6ff;
+      font-size:1.3rem;
+      margin-bottom:25px;
+      text-shadow:0 0 8px #00cfff;
+    }
+
+    /* Imagen */
+    .imagen{
+      width:100%;
+      border-radius:20px;
+      border:4px solid #5fd6ff;
+      margin-bottom:25px;
+      box-shadow:0 0 25px rgba(0,191,255,0.8);
+    }
+
+    /* Botones */
+    .botones{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    button{
+      border:none;
+      padding:15px 30px;
+      border-radius:15px;
+      font-size:1.1rem;
+      cursor:pointer;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    .si{
+      background:#00bfff;
+      color:white;
+      box-shadow:0 0 15px #00bfff;
+    }
+
+    .si:hover{
+      transform:scale(1.1);
+      background:#38d6ff;
+    }
+
+    .no{
+      background:#003566;
+      color:white;
+      box-shadow:0 0 15px #001d3d;
+      position:relative;
     }
   </style>
 </head>
-
 <body>
 
-  <!-- Fantasmas -->
-  <div class="ghost" style="left:10%; animation-duration:14s;">👻</div>
-  <div class="ghost" style="left:25%; animation-duration:18s;">👻</div>
-  <div class="ghost" style="left:40%; animation-duration:16s;">👻</div>
-  <div class="ghost" style="left:60%; animation-duration:20s;">👻</div>
-  <div class="ghost" style="left:80%; animation-duration:15s;">👻</div>
+  <!-- Gatitos -->
+  <img class="gato g1" src="https://media.tenor.com/8j1JjKz6QxAAAAAi/cat-cute.gif">
+  <img class="gato g2" src="https://media.tenor.com/8j1JjKz6QxAAAAAi/cat-cute.gif">
+  <img class="gato g3" src="https://media.tenor.com/8j1JjKz6QxAAAAAi/cat-cute.gif">
 
-  <div class="container">
-    <h1>Espero que te mejores </h1>
+  <!-- Contenido -->
+  <div class="card">
+    <h1>YO NO FUI 😭</h1>
+    <h2>NO FUY YO VENUUUU</h2>
 
-    <p>Tómate un naproxeno Lulo 😠</p>
-    <p>y dale de comer al fantasma moco verde</p>
+    <p class="mensaje">
+      sigamos jugando shi? 🥺💙
+    </p>
 
-    <div class="moco" onclick="alimentar()">🟢</div>
+    <!-- TU IMAGEN -->
+    <img class="imagen" src="image(11).png">
 
-    <div class="contador">
-      Fantasma alimentado: <span id="count">0</span> veces
-    </div>
+    <div class="botones">
+      <button class="si" onclick="alert('YIPPIEEE 💙✨')">
+        Shi 💙
+      </button>
 
-    <div class="mensaje" id="mensaje">
-      El fantasma está feliz 👻💚
+      <button class="no" id="noBtn">
+        No 😡
+      </button>
     </div>
   </div>
 
   <script>
-    let contador = 0;
+    const noBtn = document.getElementById("noBtn");
 
-    function alimentar(){
-      contador++;
-      document.getElementById("count").innerText = contador;
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
 
-      const mensaje = document.getElementById("mensaje");
-      mensaje.style.opacity = "1";
-
-      setTimeout(() => {
-        mensaje.style.opacity = "0";
-      }, 1500);
-    }
+      noBtn.style.position = "absolute";
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
   </script>
 
 </body>
